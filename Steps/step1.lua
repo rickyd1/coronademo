@@ -1,8 +1,89 @@
+--[[
+============================================================
+                 STEP ONE                  
+============================================================
+ 
+At this point you should have already generated a new composer app using the CoronaSDK app.
+You should access  level1.lua and clear out the existion variables while leaving the composer functions in place. 
+
+In addition, physics functions should remain within the composer template.
+                                
+============================================================
+                 RESOURCES
+============================================================
+You Base file should be similar to the template on the composer documentation page.
+
+Composer:
+http://docs.coronalabs.com/api/library/composer/index.html 
+
+Physics:
+http://docs.coronalabs.com/daily/api/library/physics/index.html 
+
+--]]
+
+--[[
+============================================================
+                      PART A
+============================================================
+	
+	File we are working with: level1.lua
+	
+	locate: physics.start(); physics.pause()
+	
+	Below this line we are going to set the scale for the app.
+	
+	setScale:
+	
+	Sets the internal pixels-per-meter ratio that is used in converting between
+	on-screen Corona coordinates and simulated physics coordinates. This should be 
+	done only once, before any physical objects are instantiated.
+	
+	syntax: physics.setScale( value )
+============================================================
+--]]
+
 -- SET SCALE 
 physics.setScale( 52 )
 
--- CREATE SCENE ELEMENTS
+
+--[[
+============================================================
+                      PART B
+============================================================
+
+	File we are working with: level1.lua
 	
+	locate:	function scene:create( event )
+	
+	Within this section we are going to place our intial grahpics and variables that
+	will not change
+	
+	Concepts covered
+	
+	scene:create() - 
+	
+	When a scene is loaded and it does not have an associated self.view established, 
+	Composer will dispatch an event to the scene's local scene:create() function. 
+	If the scene's view already exists, the create event is skipped because, by default, 
+	Composer tries to keep the scene's view in memory, assuming you will return to the 
+	scene at some point. Thus, the scene:create() function may not be executed every 
+	time the scene is shown.
+	
+	
+	display.newRect - 
+	
+	Creates a rectangle object. The local origin is at the center of the rectangle; 
+	the anchor point is initialized to this local origin.
+	
+	display.newImageRect - 
+	
+	Displays an image on the screen from a file
+	
+	physics.addBody()
+	
+	This function turns almost any Corona display object into a simulated physical object
+============================================================
+--]]	
 
 -- create a rectangle as the backdrop
 local background = display.newRect( 0, 0, screenW, screenH )
@@ -14,11 +95,6 @@ local gradient = {
 }
 background:setFillColor( gradient )
 
--- create a cannon
-cannon = display.newImageRect("assets/d-canon.png", 41, 58 )
-cannon.anchorX = 0.5
-cannon.anchorY = 1
-cannon.x, cannon.y = display.contentWidth * .5, display.contentHeight - 70
 
 -- create a grass object and add physics (with custom shape)
 local grass = display.newImageRect( "assets/grass.png", screenW, 82 )
@@ -38,6 +114,5 @@ scorePanel.x, scorePanel.y = 0, screenH
 	
 -- all display objects must be inserted into group
 sceneGroup:insert( background )
-sceneGroup:insert( cannon )
 sceneGroup:insert( grass )
 sceneGroup:insert( scorePanel )

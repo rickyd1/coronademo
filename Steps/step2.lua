@@ -1,4 +1,59 @@
--- LOAD ELEMENTS AFTER USER IS ON SCREEN
+--[[
+============================================================
+                 STEP TWO                  
+============================================================
+ 
+At this stage we are going to add elements to our scene:show()
+                                
+============================================================
+                 RESOURCES
+============================================================
+
+Composer:
+http://docs.coronalabs.com/api/library/composer/index.html 
+
+Physics:
+http://docs.coronalabs.com/daily/api/library/physics/index.html 
+
+--]]
+
+
+--[[
+============================================================
+                      PART A
+============================================================
+	
+	File we are working with: level1.lua
+	
+	locate: scene:show 
+					if phase == "will" then
+	
+	We will be loading the cannon prior to the screen loading
+============================================================
+--]]
+
+	-- create a cannon
+	cannon = display.newImageRect("assets/d-canon.png", 41, 58 )
+	cannon.anchorX = 0.5
+	cannon.anchorY = 1
+	cannon.x, cannon.y = display.contentWidth * .5, display.contentHeight - 70
+	
+	sceneGroup:insert( cannon )
+
+--[[
+============================================================
+                      PART B
+============================================================
+	
+	File we are working with: level1.lua
+	
+	locate: scene:show 
+					elseif phase == "did" then
+	
+	We will be loading the cannon prior to the screen loading
+============================================================
+--]]
+
 	
 	-- Start physics and set gravity
 	physics.start()

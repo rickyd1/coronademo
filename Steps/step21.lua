@@ -1,20 +1,79 @@
--- REQUIRE SCORE LIBRARY
+--[[
+============================================================
+                 STEP 21       
+============================================================
+ 
+We are going to integrate the two libraries with our game.
+                                
+============================================================
+                 RESOURCES
+============================================================
+	
+	display.newText():
 
--- Include Score library (both level and game over)
+	http://docs.coronalabs.com/api/library/display/newText.html
+
+--]]
+
+--[[
+============================================================
+                      PART A
+============================================================
+	
+	File we are working with: level1.lua
+	
+	locate:	local scene = composer.newScene()
+	
+	Add our scorer requiement below this line
+============================================================
+--]]
+
 local scorer = require ("score")
 
+--[[
+============================================================
+                      PART B
+============================================================
+	
+	File we are working with: level1.lua
+	
+	locate:	local function gameOver()	
+	
+	Add within game over function
+============================================================
+--]]
 
--- ADD TO GAME OVER FUNCTION
 score = totalCandy
 saveHighscore (currentLevel, score)
 
 
--- ADD current level to create scene
+--[[
+============================================================
+                      PART C
+============================================================
+	
+	File we are working with: level1.lua
+	
+	locate:	scene:create( event )
+	
+============================================================
+--]]
 
+	-- add current level to scene
 	currentLevel = "main"	
 	
-	
--- ADD SCORE DATA TO GAMEOVER.LUA
+--[[
+============================================================
+                      PART C
+============================================================
+
+	File we are working with: gameover.lua
+
+	locate:	scene:show( event )
+					phase == "will" then
+
+============================================================
+--]]	
 
 	currentLevel = "main"	
 	checkForFile(currentLevel)

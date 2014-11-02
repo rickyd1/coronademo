@@ -1,6 +1,14 @@
--- create file called ego.lua
+--[[
+============================================================
+                 STEP 19       
+============================================================
+ 
+We are using a library created by a third party. We will need
+to create ego.lua and add the code below
+                                
 
--- Add code below
+--]]
+
 
 
  module (..., package.seeall)

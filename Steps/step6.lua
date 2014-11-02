@@ -1,3 +1,33 @@
+--[[
+============================================================
+                 STEP 6                  
+============================================================
+ 
+At this stage we are going to spawn some balloons
+                                
+============================================================
+                 RESOURCES
+============================================================
+
+timer.performWithDelay():
+
+http://docs.coronalabs.com/api/library/timer/performWithDelay.html
+
+--]]
+
+
+--[[
+============================================================
+                      PART A
+============================================================
+	
+	File we are working with: level1.lua
+	
+	locate: Place code after shoot function
+		
+============================================================
+--]]
+
 -- Spawn some basic balloons
 local function spawnBalloon(event)
 	local randomPos = screenW - math.random(screenW - 60)
@@ -13,5 +43,19 @@ local function spawnBalloon(event)
 	balloon:applyForce( 100, -2400, balloon.x, balloon.y )
 end
 
+--[[
+============================================================
+                      PART B
+============================================================
+	
+	File we are working with: level1.lua
+	
+	locate: scene:show 
+					elseif phase == "did" then
+					
+	Place code at bottom of funtions area
+		
+============================================================
+--]]
 -- Add Spawn Timer
 blackBalloons = timer.performWithDelay(1000, spawnBalloon, 0)	

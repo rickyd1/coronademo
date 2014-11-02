@@ -1,3 +1,33 @@
+--[[
+============================================================
+                 STEP 8                  
+============================================================
+ 
+At this stage we are going to spawn some balloons that give us 
+more ammo and increase our score
+                                
+============================================================
+                 RESOURCES
+============================================================
+
+	timer.performWithDelay():
+	
+	http://docs.coronalabs.com/api/library/timer/performWithDelay.html
+
+--]]
+
+--[[
+============================================================
+                      PART A
+============================================================
+	
+	File we are working with: level1.lua
+	
+	locate: Place code after spawn ballon funciton from step 7
+		
+============================================================
+--]]
+
 -- Spawn Double Balloon
 local function spawnDoubleBalloon(event)
 	local randomPos = screenW - math.random(screenW - 60)
@@ -14,6 +44,21 @@ local function spawnDoubleBalloon(event)
 	balloon:applyForce( 100, -2000, balloon.x, balloon.y )
 end
 
--- Set Timer
 
+--[[
+============================================================
+                      PART B
+============================================================
+	
+	File we are working with: level1.lua
+	
+	locate: scene:show 
+					elseif phase == "did" then
+					
+	Place code at bottom of funtions area after the timer used in step 7
+		
+============================================================
+--]]
+
+-- Set Timer
 doubleBalloons = timer.performWithDelay(15000, spawnDoubleBalloon, 30)

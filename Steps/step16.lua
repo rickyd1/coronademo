@@ -1,4 +1,31 @@
--- Add Game Over scene
+--[[
+============================================================
+                 STEP 16           
+============================================================
+ 
+We are going to add functionality to our gameover.lua file. 
+If this file is not created, you will need to create file with this
+name. It should have the same template as level1.lua had in step one.
+                                
+============================================================
+                 RESOURCES
+============================================================
+
+
+--]]
+
+
+--[[
+============================================================
+                      PART A
+============================================================
+	
+	File we are working with: level1.lua
+	
+	locate:	scene:create( event )
+		
+============================================================
+--]]
 
 
 	-- create a rectangle as the backdrop

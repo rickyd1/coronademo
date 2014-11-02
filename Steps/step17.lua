@@ -1,5 +1,34 @@
--- Add play again button
--- Function to handle button events
+--[[
+============================================================
+                 STEP 17             
+============================================================
+ 
+We are going to add display object to our gameover screen
+                                
+============================================================
+                 RESOURCES
+============================================================
+	
+	widget.newButton():
+
+	http://docs.coronalabs.com/api/library/widget/newButton.html
+
+--]]
+
+--[[
+============================================================
+                      PART A
+============================================================
+	
+	File we are working with: gameover.lua
+	
+	locate:	scene:create( event )
+	
+	Place funciton prior to scene create function
+		
+============================================================
+--]]
+
 
 -- 'onRelease' event listener for playBtn
 local function onPlayBtnRelease()
@@ -9,6 +38,21 @@ local function onPlayBtnRelease()
 	return true	-- indicates successful touch
 end
 
+
+--[[
+============================================================
+                      PART B
+============================================================
+	
+	File we are working with: level1.lua
+	
+	locate:	scene:show( event )
+					if phase == "will" then
+					
+	Place function with the will conditional of the scene show function
+		
+============================================================
+--]]
 -- Add to show scene
 	
 	playAgainBtn = widget.newButton{

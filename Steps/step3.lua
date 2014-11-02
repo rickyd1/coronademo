@@ -1,6 +1,54 @@
+--[[
+============================================================
+                 STEP THREE                  
+============================================================
+ 
+At this stage we are going to add the touch listener to the cannon
+                                
+============================================================
+                 RESOURCES
+============================================================
+
+object:addEventListener()
+http://docs.coronalabs.com/api/type/EventListener/addEventListener.html
+
+Physics:
+http://docs.coronalabs.com/daily/api/library/physics/index.html 
+
+--]]
+
+--[[
+============================================================
+                      PART A
+============================================================
+	
+	File we are working with: level1.lua
+	
+	locate: scene:show 
+					if phase == "did" then
+	
+	We will be loading the cannon prior to the screen loading
+============================================================
+--]]
+
 -- Add Shoot Feature To load Screen
 Runtime:addEventListener("touch", shoot)
 
+
+--[[
+============================================================
+                      PART B
+============================================================
+	
+	File we are working with: level1.lua
+	
+	locate: Between required elements and before scene:create( event )
+	
+	We will be adding the function shoot outside of the composer structure.
+	It will be called prior to the scene loading making the touch action accessible.
+	
+============================================================
+--]]
 -- Create shoot functions
 local function shoot(event)
 		if event.phase == "began" then 

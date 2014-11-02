@@ -1,6 +1,13 @@
--- create file called score.lua
+--[[
+============================================================
+                 STEP 20            
+============================================================
+ 
+We are using a library created by a third party. We will need
+to create score.lua and add the code below
+                                
 
--- Paste code below in file
+--]]
 
 
 --Saving/Loading Stuff
